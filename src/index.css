@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --glass-bg: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.2);
+  }
+  
+  body {
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 text-gray-900 dark:text-gray-100;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  /* Glassmorphism Card */
+  .glass-card {
+    @apply bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 shadow-glass transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply shadow-glass-hover -translate-y-1;
+  }
+  
+  /* Neumorphism Elements */
+  .neuro-card {
+    @apply bg-gray-200 dark:bg-gray-800 rounded-xl;
+    box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+  }
+  
+  .neuro-btn {
+    @apply bg-gray-200 dark:bg-gray-700 rounded-lg px-6 py-3 font-medium transition-all;
+    box-shadow: 8px 8px 16px #a3b1c6, -8px -8px 16px #ffffff;
+  }
+  
+  .neuro-btn:active {
+    box-shadow: inset 8px 8px 16px #a3b1c6, inset -8px -8px 16px #ffffff;
+  }
+  
+  /* Gradient Text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 via-secondary-500 to-accent-500 bg-clip-text text-transparent;
+  }
+  
+  /* Animated Background */
+  .animated-bg {
+    background: linear-gradient(270deg, #6366F1, #10B981, #F59E0B);
+    background-size: 600% 600%;
+    animation: gradientShift 15s ease infinite;
+  }
+  
+  @keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Shimmer Loading */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.2) 20%,
+      rgba(255, 255, 255, 0.5) 60%,
+      rgba(255, 255, 255, 0)
+    );
+    animation: shimmer 2s infinite;
+    background-size: 200% 100%;
+  }
+  
+  /* Skill Pills */
+  .skill-pill {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-primary-100 text-primary-700 dark:bg-primary-900/30 dark:text-primary-300;
+  }
+  
+  /* Progress Ring */
+  .progress-ring {
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
