@@ -288,5 +288,5 @@ For demo requests or queries, reach out via GitHub issues.
 
 ---
 
-**Made with ❤️ for National Level Hackathons**  
+**Made for National Level Hackathons**  
 © 2026 CareerNexus AI
